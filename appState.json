@@ -1,0 +1,103 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "1a7925eb-eebc-41b1-8ab3-430e9821c57f": {
+        "id": "1a7925eb-eebc-41b1-8ab3-430e9821c57f",
+        "parent": null,
+        "name": "VCSTest",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "79b6b0f4-8344-475d-a1ea-7e5fc0cff094"
+        ],
+        "isRemovable": false,
+        "filePath": "VCSTest"
+      },
+      "79b6b0f4-8344-475d-a1ea-7e5fc0cff094": {
+        "id": "79b6b0f4-8344-475d-a1ea-7e5fc0cff094",
+        "parent": "1a7925eb-eebc-41b1-8ab3-430e9821c57f",
+        "name": "lambda.js",
+        "type": "LAMBDA_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "VCSTest/lambda.js",
+        "code": "let AWS = require('aws-sdk');\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nexports.handler = function (event, context, callback) {\n    ddb.get({\n        TableName: 'HS_user',\n        Key: { 'user_id': '100' }\n    }).promise().then(function (data) {\n        //your logic goes here\n    }).catch(function (err) {\n        //handle error\n    });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "triggers": [],
+        "config": {
+          "runtime": "nodejs8.10",
+          "timeout": 60,
+          "memory": 128
+        }
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "1a7925eb-eebc-41b1-8ab3-430e9821c57f",
+    "openFiles": [
+      "79b6b0f4-8344-475d-a1ea-7e5fc0cff094"
+    ],
+    "currentFileId": "79b6b0f4-8344-475d-a1ea-7e5fc0cff094",
+    "resources": {
+      "ddbHSuser": {
+        "name": "ddbHSuser",
+        "type": "DynamoDB",
+        "config": {
+          "mode": 1,
+          "operation": "get",
+          "table": {
+            "arn": "arn:aws:dynamodb:us-east-1:318300609668:table/HS_user",
+            "name": "HS_user",
+            "partitionKey": "user_id",
+            "partitionKeyType": "S",
+            "hasSortKey": false,
+            "sortKey": "",
+            "sortKeyType": "S",
+            "mode": 1
+          },
+          "parameters": {
+            "Key": {
+              "user_id": "100"
+            },
+            "Item": {},
+            "ExpressionAttributeValues": {}
+          },
+          "validator": {
+            "validatableFields": {},
+            "validity": true
+          },
+          "valid": true
+        },
+        "globallyEditable": false
+      }
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {}
+    },
+    "lambdaId": "79b6b0f4-8344-475d-a1ea-7e5fc0cff094"
+  },
+  "PROJECT_META": {
+    "projectName": "VCSTest",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "lastSave": 1540791349466
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "VCSTest",
+      "url": "https://github.com/Cassendra4/VCSTest"
+    }
+  }
+}

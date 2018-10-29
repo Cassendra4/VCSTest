@@ -6,7 +6,7 @@ exports.handler = function (event, context, callback) {
         TableName: 'HS_user',
         Key: { 'user_id': '100' }
     }).promise().then(function (data) {
-        //your logic goes here
+        console.log("Data", data);
     }).catch(function (err) {
         //handle error
     });
